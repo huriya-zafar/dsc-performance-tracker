@@ -1,5 +1,4 @@
 # dsc-performance-tracker
-# dsc-performance-tracker
 
 DSC Performance Tracker is a modern, frontend-only web application developed specifically for my university’s **Developer Students Club Hamdard University (DSC)** to monitor, manage, and evaluate member performance in a transparent and structured way.
 
