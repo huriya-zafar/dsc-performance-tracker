@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSC Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="app-header">
+    <div class="header-left">
+        <img src="logo.png" alt="DSC Logo" class="logo">
+        <div>
+            <div class="club-name">Developer Student Club</div>
+            <div class="club-sub">Admin Dashboard</div>
+        </div>
+    </div>
+</header>
+
+<!-- Admin Login Card -->
+<div class="login-container">
+    <div class="login-card" id="loginModal">
+        <img src="logo.png" alt="DSC Logo" class="login-logo">
+        <h2 class="login-title">Admin Login</h2>
+
+        <input type="password" id="loginPassword" placeholder="Enter admin password" class="login-input">
+        <button id="loginBtn" class="btn primary">Login</button>
+        <p id="loginError" class="login-error"></p>
+    </div>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard-container" id="dashboardContainer">
+    <h1 class="page-title">DSC Admin Performance Dashboard</h1>
+
+    <div class="summary-cards">
+        <div class="card">Total Members<br><span id="totalMembers">0</span></div>
+        <div class="card">Active<br><span id="activeMembers">0</span></div>
+        <div class="card">At Risk<br><span id="atRiskMembers">0</span></div>
+        <div class="card">Eliminated<br><span id="eliminatedMembers">0</span></div>
+    </div>
+
+    <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search name..." onkeyup="renderMemberTable()">
+
+        <select id="teamFilter" onchange="renderMemberTable()">
+            <option value="">All Teams</option>
+            <option>Society Affairs</option>
+            <option>Graphics & Visual</option>
+            <option>Operations</option>
+            <option>Promotion</option>
+            <option>Creativity</option>
+        </select>
+
+        <select id="roleFilter" onchange="renderMemberTable()">
+            <option value="">All Roles</option>
+            <option>President</option>
+            <option>VP</option>
+            <option>General Secretary</option>
+            <option>Director</option>
+        </select>
+    </div>
+
+    <table class="member-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Team</th>
+                <th>Points</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="memberTableBody"></tbody>
+    </table>
+
+    <button class="add-member-btn" onclick="openAddModal()">Add Member</button>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSC Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+    <div class="header-left">
+        <img src="logo.png" alt="DSC Logo" class="logo">
+        <div>
+            <div class="club-name">Developer Student Club</div>
+            <div class="club-sub">Members Leaderboard</div>
+        </div>
+    </div>
+</header>
+
+<div class="leaderboard-container">
+    <h1 class="page-title">DSC Members Leaderboard</h1>
+
+    <div class="filters">
+        <input type="text" id="leaderSearch" placeholder="Search name..." onkeyup="renderLeaderboard()">
+
+        <select id="leaderTeamFilter" onchange="renderLeaderboard()">
+            <option value="">All Teams</option>
+            <option>Society Affairs</option>
+            <option>Graphics & Visual</option>
+            <option>Operations</option>
+            <option>Promotion</option>
+            <option>Creativity</option>
+        </select>
+
+        <select id="leaderSort" onchange="renderLeaderboard()">
+            <option value="desc">High → Low</option>
+            <option value="asc">Low → High</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Team</th>
+                <th>Points</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboardTable"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
